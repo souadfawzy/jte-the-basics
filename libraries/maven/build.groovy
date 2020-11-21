@@ -4,7 +4,7 @@ node{
     
        println "build from the maven library"
        //sh "mvn clean verify"
-       sh 'mvn -B -DskipTests clean package'
+       sh 'mvn  -f EmiratesAirlinesTodoApp/pom.xml -B -DskipTests clean package'
     
     }
         }
