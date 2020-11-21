@@ -1,3 +1,3 @@
-void call(url){
-        print url
-}
+void call(){
+        println "checkout code"
+ }
