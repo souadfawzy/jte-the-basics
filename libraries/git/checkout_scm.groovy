@@ -2,8 +2,8 @@ void call(devbranch){
     stage("Git: SCM Checkout"){
         println "source checkout ${devbranch.branch}"
         println "url ${devbranch.url}"
-        scm([
-        $class: 'GitSCM'
+        checkout([
+        $class: 'GitSCM',
         doGenerateSubmoduleConfigurations: false, 
         branches: [[name: "${devbranch.branch}"]],
         userRemoteConfigs: [[ url: "${devbranch.url}" ,credentialsId : "${devbranch.git_cred}"]]
