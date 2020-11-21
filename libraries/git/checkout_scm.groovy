@@ -1,4 +1,5 @@
 void call(devbranch){
+     node{
     stage("Git: SCM Checkout"){
         println "source checkout ${devbranch.branch}"
         println "url ${devbranch.url}"
@@ -8,7 +9,7 @@ void call(devbranch){
         branches: [[name: "${devbranch.branch}"]],
         userRemoteConfigs: [[ url: "${devbranch.url}" ,credentialsId : "${devbranch.git_cred}"]]
     ])
-    
+    }
     }
 }
 
