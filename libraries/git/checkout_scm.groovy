@@ -1,6 +1,6 @@
-void call(){
+void call(devbranch){
     stage("Git: SCM Checkout"){
-        println "source checkout"
+        println "source checkout ${devbranch.branch}"
     //     checkout([
     //     $class: 'GitSCM'
     //     doGenerateSubmoduleConfigurations: false, 
