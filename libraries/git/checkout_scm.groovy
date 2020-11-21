@@ -2,13 +2,13 @@ void call(devbranch){
     stage("Git: SCM Checkout"){
         println "source checkout ${devbranch.branch}"
         println "url ${devbranch.url}"
-    //     checkout([
-    //     $class: 'GitSCM'
-    //     doGenerateSubmoduleConfigurations: false, 
-    //     branches: [[name:  'master' ]],
-    //     userRemoteConfigs: [[ url: 'https://github.com/souadfawzy/emirateairline-todo.git' ,credentialsId : 'git_cred']]
-    // ])
-    } 
+        checkout([
+        $class: 'GitSCM'
+        doGenerateSubmoduleConfigurations: false, 
+        branches: [[name: "${devbranch.branch}"]],
+        userRemoteConfigs: [[ url: "${devbranch.url}" ,credentialsId : "${devbranch.git_cred}"]]
+    ])
+    
     
 }
 
